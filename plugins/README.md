@@ -1,8 +1,22 @@
 IDA Plugins
 ===
 
-Collection of IDA plugins that I've written to help with embedded RE work.
-Unless otherwise specified, just drop the .py files into IDA's *plugins* directory.
+Collection of IDA plugins that I've written to help with RE work.
+
+To install all plugins, run:
+
+```
+$ python ./install.py /path/to/your/ida/install/directory
+```
+
+To install only selected plugins, just drop the .py file(s) into IDA's `plugins` directory.
+
+alleycat
+----------
+
+  * Finds paths between two or more functions
+  * Generates interactive call graphs
+  * Fully scriptable
 
 codatify
 --------
@@ -10,6 +24,16 @@ codatify
   * Defines ASCII strings that IDA's auto analysis missed
   * Defines functions/code that IDA's auto analysis missed
   * Converts all undefined bytes in the data segment into DWORDs (thus allowing IDA to resolve function and jump table pointers)
+
+fluorescence
+------------
+
+  * Highlights all call instructions in an IDB.
+
+leafblower
+----------
+
+  * Assists in identifying standard POSIX functions in MIPS/ARM code.
 
 localxrefs
 ----------
@@ -26,9 +50,8 @@ mipsrop
 
   * Allows you to search for suitable ROP gadgets in MIPS executable code (MIPS only)
 
-pathfinder
-----------
+rizzo
+-----
 
-  * Finds paths between two or more functions
-  * Generates interactive call graphs
-  * Fully scriptable
+  * Performs function signature generation and matching to identify common functions between different IDBs
+
